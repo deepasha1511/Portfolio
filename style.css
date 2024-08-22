@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+border: none;
+outline: none;
+scroll-behavior: smooth;
+font-family:Times New Roman, Times, serif;
+
+}
+:root{
+    --bg-color:#ffffff;
+    --snd-bf-color:#ffb700;
+    --text-color:black;
+    --main-color: rgb(245, 245, 245);
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: var(--bg-color);
+    color:var(--text-color);
+}
+section{
+   min-height: 100vh;
+   padding: 10rem 9% 2rem;
+}
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    font-family:Times New Roman, Times, serif;
+
+}
+.logo{
+    font-size: 2.5rem;
+    color: var(--snd-bf-color);
+    font-weight: 700;
+    cursor:default;
+}
+.navbar a{
+    font-size: 1.5rem;
+    color:var(--text-color);
+    margin-left: 4rem;
+    font-weight: 700;
+
+}
+.navbar a:hover,
+.navbar a.active{
+    color:var(--text-color);
+}
+#menu-icon{
+   font-size: 3.6rem;
+   color:var(--bg-color);
+    display: none;
+}
+.home{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-homie h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+.home-homie h3:nth-of-type(2){
+    margin-bottom: 2rem;
+
+}
+span{
+    color:var(--snd-bf-color);
+}
+.home-homie h1{
+    font-size: 5.6rem;
+    font-weight:700;
+    line-height: 1.3;
+}
+.home-img img{
+    width:25vw;
+    animation: floatImage 4s ease-in-out;
+
+}
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+.home-homie p{
+    font-size: 2rem;
+    font-family:Times New Roman, Times, serif;
+}
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--snd-bf-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--snd-bf-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+.social-media a:hover{
+    background: var(--snd-bf-color);
+    color: var(--main-color);
+    box-shadow:0 0 1rem var(--snd-bf-color);
+
+}
+.btn{
+    display:inline-block ;
+    padding: 1rem 2.8rem;
+    background:var(--snd-bf-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 0.5rem #ffcd04cf;
+    font-size: 1.6rem;
+    color:var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition:.5s ease;
+}
+.btn :hover{
+    box-shadow: none;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:3rem;
+    background: var(--bg-color);
+    font-size: 2rem;
+    font-family:Times New Roman, Times, serif;
+}
+.heading{
+    margin-bottom: 75px;
+    text-align: center;
+    font-size: 4.5rem;
+}
+.about h2{
+    margin-bottom: 20px;
+    text-align: left;
+    font-size: 3rem;
+    color:var(--snd-bf-color);
+}
+.about h3{
+    text-align: left;
+    font-size: 2rem;
+    color:var(--text-color);
+}
+/* General styles for the portfolio section */
+.portfolio-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.portfolio-box {
+    position: relative;
+    width: 100%; /* Use 100% width to fit the grid column */
+    height: 200px; /* Set a fixed height for the boxes */
+    overflow: hidden;
+    border: 1px solid #929292; /* Optional: to show a border around each box */
+    text-align: center;
+}
+
+.portfolio-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: center; /* Ensures the image covers the box while maintaining aspect ratio */
+}
+
+.portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+        gap: 30px; /* Increase gap for larger screens */
+    }
+
+    .portfolio-box {
+        height: 220px; /* Increase box height for larger screens */
+    }
+}
+
+/* Responsive styles for very large screens */
+@media (min-width: 1200px) {
+    .portfolio-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns layout */
+        gap: 40px; /* Further increase gap for very large screens */
+    }
+
+    .portfolio-box {
+        height: 240px; /* Increase box height for very large screens */
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .portfolio-box {
+        width: 100%; /* Ensure boxes take full width on small screens */
+        height: 200px; /* Ensure consistent height on small screens */
+    }
+}
+
+/* General styles for the projects section */
+.project-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.project-box {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd; /* Optional: to show a border around each box */
+    text-align: center;
+    background-color: #fff; /* Background color for the project box */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: for a subtle shadow effect */
+    border-radius: 8px; /* Optional: for rounded corners */
+    padding: 20px; /* Padding inside each project box */
+}
+
+.project-box img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image covers the box while maintaining aspect ratio */
+    border-radius: 8px 8px 0 0; /* Optional: rounded corners for the top of the image */
+}
+
+.project-box h3 {
+    margin: 15px 0 10px 0; /* Margin around the project title */
+    font-size: 2rem; /* Font size for the project title */
+}
+
+.project-box p {
+    font-size: 1.2rem; /* Font size for the project description */
+    line-height: 1.5rem; /* Line height for better readability */
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+        gap: 30px; /* Increase gap for larger screens */
+    }
+}
+
+/* Responsive styles for very large screens */
+@media (min-width: 1200px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+        gap: 40px; /* Further increase gap for very large screens */
+    }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 767px) {
+    .project-container {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    .project-box {
+        width: 100%; /* Ensure boxes take full width on small screens */
+    }
+}
+
+
+.contact h2{
+    margin-bottom: 3rem;
+}
+.contact form{
+    max-width:70rem ;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.contact form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width:100% ;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(white);
+    border-radius: .8rem;
+    margin: .7rem 0;
+    border: 1px solid #929292;
+}
+.contact form .input-box input{
+    width:49%;
+}
+.contact form textarea{
+    resize: none;
+}
+.contact form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+    color: black;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background-color: #ffcd04cf;
+
+}
+.footer-text{
+    font-size: 1.6rem;
+}
+.footer-iconTop{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+.footer-iconTop a:hover{
+    box-shadow: 0 0 1rem var(--main-color);
+}
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--snd-bf-color);
+}
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+
+    }
+}
+@media(max-width:991px){
+    .header{
+        padding:2rem 3%;
+    }
+    .section{
+        padding:10rem 3% ;
+    }
+    .projects{
+        padding: 7rem;
+    }
+    .portfolio{
+        padding-bottom: 7rem;
+    }
+    .contact{
+        min-height:auto ;
+    }
+    .footer{
+        padding:2rem 3%;
+    }
+}
+@media(max-width:768px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top:100%;  
+        left:0;
+        width:100%;
+        padding:1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        display: none;
+
+        
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .home{
+        flex-direction: column;
+
+    }
+    .home-homie h3{
+        font-size: 2.6rem;
+    }
+    .home-homie h1{
+        font-size: 5rem;
+    }
+    .home-homie{
+        order: 2;
+    }
+
+    .home-img img{
+        width: 90vw;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .about-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .projects h2{
+        margin-bottom: 3rem;
+
+    }
+    .portfolio-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+@media(max-width:617px){
+    .portfolio-container{
+        grid-template-columns: 1fr;
+    }
+    .home-img img{
+        width:80vw;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+    }
+    .about-img img{
+        width: 100vw;
+        margin-top: 4rem;
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .contact form .input-box input{
+        width: 100%;
+    }
+}
